@@ -1,17 +1,19 @@
 import "./globals.css"
 import Sidebar from "@/components/layout/Sidebar"
 import Header from "@/components/layout/Header"
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
-import { Vazirmatn } from "next/font/google"
+import { cn } from "@/lib/utils"
+
+import { Geist, Vazirmatn } from "next/font/google"
 
 const vazir = Vazirmatn({
   subsets: ["arabic"],
+  variable: "--font-vazir",
 })
 
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+})
 
 export default function RootLayout({
   children,
@@ -19,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fa" dir="rtl" className={cn("font-sans", geist.variable)}>
-      <body className="vazir.className">
+    <html
+      lang="fa"
+      className={cn(vazir.variable, geist.variable)}
+    >
+      <body className="font-sans" dir="rtl">
 
         <div className="flex">
 
