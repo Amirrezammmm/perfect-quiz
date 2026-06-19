@@ -1,7 +1,9 @@
+import {Button} from "@/components/ui/button"
+
 export default function Home() {
   return (
-    <div className="text-3xl font-bold text-red-500">
-      Perfect Quiz
+    <div className="p-10">
+      <Button>Perfect Quiz</Button>
     </div>
   )
 }

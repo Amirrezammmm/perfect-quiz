@@ -3,6 +3,12 @@ import Sidebar from "@/components/layout/Sidebar"
 import Header from "@/components/layout/Header"
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Vazirmatn } from "next/font/google"
+
+const vazir = Vazirmatn({
+  subsets: ["arabic"],
+})
+
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -14,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl" className={cn("font-sans", geist.variable)}>
-      <body>
+      <body className="vazir.className">
 
         <div className="flex">
 
