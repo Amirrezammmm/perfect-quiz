@@ -1,9 +1,21 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { QuestionCategory } from "@prisma/client";
 
-export async function GET() {
+
+export async function GET(request: Request) {
   try {
+    const {searchParams} = new URL(request.url);
+    const category = searchParams.get("category");
+
+
     const questions = await prisma.question.findMany({
+      where: category
+      ?{
+        category: category as QuestionCategory,
+      }
+      : undefined,
+
       orderBy: {
         createdAt: "desc",
       },

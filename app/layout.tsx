@@ -25,17 +25,17 @@ export default function RootLayout({
       lang="fa"
       className={cn(vazir.variable, geist.variable)}
     >
-      <body className="font-sans" dir="rtl">
+      <body className="font-sans overflow-hidden" dir="rtl">
 
-        <div className="flex">
+        <div className="flex h-screen w-full overflow-hidden">
 
           <Sidebar />
 
-          <div className="flex-1">
+          <div className="flex flex-1 min-w-0 flex-col h-screen">
 
             <Header />
 
-            <main className="p-6">
+            <main className="flex-1 overflow-y-auto p-6">
               {children}
             </main>
 
